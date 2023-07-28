@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'channels',
     'uvicorn',
     'core',
+    'room',
 ]
 
 MIDDLEWARE = [
@@ -74,6 +75,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'djangochat.wsgi.application'
+
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+    },
+}
 
 
 # Database
