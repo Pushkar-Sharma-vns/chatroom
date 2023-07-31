@@ -28,20 +28,20 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 LOGOUT_REDIRECT_URL = '/'
-LOGIN_REDIRECT_URL = 'rooms/'
+LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login/'
 
 # Application definition
 
 INSTALLED_APPS = [
+    'uvicorn',
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'channels',
-    'uvicorn',
     'core',
     'room',
 ]
@@ -75,6 +75,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'djangochat.wsgi.application'
+ASGI_APPLICATION = 'djangochat.asgi.application'
 
 
 CHANNEL_LAYERS = {
